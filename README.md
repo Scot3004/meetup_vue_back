@@ -1,18 +1,23 @@
-# flask-restful-boilerplate
-Boilerplate template for a Python Flask_Restful applications with Flask-SQLAlchemy and SQLite example.
-Use this template to quick start rest api development with flask.
+# back meetup
+Código de ejemplo para instalación de back
 
-## Install instructions
-  - Install postman chrome extension
-  - Make sure you have working installation of python 3 if not get it installed
-  - Create a virtualenv with command : python -m venv venv
-  - Activate virtualenv
+## Instalaciones de instalación Virtualenv
+  - Asegurese de tener instalado python3
+  - Cree un virtualenv con el comando : python -m venv venv
+  - Active el virtualenv
     - Windows : venv\Scripts\activate
     - Mac and Ubuntu : . venv/bin/activate
-  - Install dependencies : pip install -r requirements.txt
+  - Instale las dependencias : pip install -r requirements.txt
 
 
-Once you install or deploy app you can test it by calling the GET, POST, PUT, and DELETE method of /api/hello with postman.
+## Instalaciones de instalación pyenv
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
+Para este procedimiento se presume que tiene instalado pyenv https://github.com/pyenv/pyenv
+  - Instale python 3.6.4 `pyenv install 3.6.4`
+  - Cree un virtualenv con el comando : `pyenv virtualenv 3.6.4 meetup_back`
+  - Active el virtualenv: `pyenv activate meetup_back`
+  - Instale las dependencias : `pip install -r requirements.txt`
+ 
+ ## Correr el proyecto
+ 
+Una vez creado el virtualenv ejectute usando `python api.py`
