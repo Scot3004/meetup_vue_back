@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_restful import Resource, Api, abort
 from functools import wraps
 from flask_jwt import JWT, jwt_required, current_identity
@@ -78,10 +78,13 @@ class HelloWorld(Resource):
     }
 
 class Imagenes(Resource):
-    #decorators = [checkuser, jwt_required()]
+    decorators = [checkuser, jwt_required()]
     def get(self):
-        return dumps(mongo.db.reviews.find({
-        }))
+        reviews = mongo.db.reviews
+        output = []
+        for review in reviews.find():
+            output.append({'id': str(review['_id']), 'url' : review['url'], 'alt' : review['alt']})
+        return jsonify({'result' : output})
 
     def post(self):
         return dumps(mongo.db.reviews.insert_one({
